@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace VaultPOC.Models
 {
@@ -7,10 +6,14 @@ namespace VaultPOC.Models
     {
         public const string Vault = "Vault";
 
+        [Required]
         [Url(ErrorMessage = "Invalid Vault URL")]
         public string Url { get; set; }
 
+        [Required]
         public string Name { get; set; }
+
+        [Required]
         public string Token { get; set; }
     }
 }

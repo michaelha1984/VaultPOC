@@ -25,7 +25,14 @@ namespace VaultPOC
 
             var service = ActivatorUtilities.CreateInstance<VaultSecretRetriever>(host.Services);
 
-            var _ = await service.GetSecretsAsync();
+            var secrets = await service.GetSecretsAsync();
+
+            foreach (var secret in secrets)
+            {
+                Console.WriteLine($"{secret.Key} = {secret.Value}");
+            }
+
+            Console.ReadKey();
         }
     }
 }
